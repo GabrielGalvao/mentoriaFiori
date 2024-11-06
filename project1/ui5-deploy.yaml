@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: project1
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: S4MentoriaFioriGGA
+          url: http://s4dhost.sap:443
+          client: '100'
+        app:
+          name: REPOTESTE
+          package: $TMP
+          transport: S4DK900239
+        exclude:
+          - /test/
