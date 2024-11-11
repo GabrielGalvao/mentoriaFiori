@@ -19,7 +19,7 @@ builder:
           client: '100'
         app:
           name: REPOTESTE
-          package: $TMP
+          package: ZTRAIN_10
           transport: S4DK900239
         exclude:
           - /test/
